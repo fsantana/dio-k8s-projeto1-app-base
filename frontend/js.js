@@ -6,7 +6,6 @@ $("#button-blue").on("click", function() {
 
     $.ajax({
         url: "",
-        
         type: "post",
         data: {nome: txt_nome, comentario: txt_comentario, email: txt_email},
         beforeSend: function() {
@@ -18,4 +17,4 @@ $("#button-blue").on("click", function() {
         alert("Dados Salvos");
     })
 
-});
+})

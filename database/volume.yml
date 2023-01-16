@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: mysql-pv-volume
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /dio-app-database/
+    
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name:  mysql-pv-claim
+spec:
+  storageClassName: mysql-pv-volume
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
